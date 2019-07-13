@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      D3 + Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color="light">Advanced D3 Charts</ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-size: 14px;">
+          This experiment visualizes source repositories using an interactive tree. Each disc represents a file, with a
+          radius proportional to the number of lines of code (loc). All rendering is done client-side, in JavaScript.
+          Try hovering on nodes to see the loc number, clicking on directory nodes to fold them, dragging nodes to
+          rearrange the layout, and changing project to see different tree structures. Built with d3.js. Inspired by
+          Code Swarm and Gource.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-select [(ngModel)]="chart" (ionChange)="changeChart()">
+      <ion-select-option value="01" selected="true">fzaninotto / uptime</ion-select-option>
+      <ion-select-option value="02">fzaninotto / faker</ion-select-option>
+      <ion-select-option value="03">jquery / jquery</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <div id="visualization"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
